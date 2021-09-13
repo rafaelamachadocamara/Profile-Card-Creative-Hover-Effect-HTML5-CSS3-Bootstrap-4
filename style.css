@@ -1,1 +1,135 @@
-html
+body{
+    background: #222;
+}
+
+.sec-spacer{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.tc-image-effect{
+    position: relative;
+    overflow: hidden;
+    background: #222;
+}
+
+.tc-image-effect img{
+    transition: all .4s ease-in-out;
+    opacity: 0.9;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+.tc-image-effect:hover img{
+    transform: scale(1.2);
+    filter: 4px;
+}
+
+.tc-image-effect .caption{
+    position: absolute;
+    bottom: calc(50% - 30px);
+    left: 50%;
+    transform: translateX(-50%) translateY(50%);
+    z-index: 10;
+    text-align: center;
+    width: 100%;
+    padding-top: 30px;
+}
+
+.tc-image-effect:before,
+.tc-image-effect:after{
+    position: absolute;
+    content: "";
+    height: 0px;
+    width: 0px;
+    background-color: transparent;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+}
+
+.tc-image-effect:before{
+    border-left: 1px solid #fff;
+    border-top: 1px solid #fff;
+    top: 20px;
+    left: 20px;
+    z-index: 1;
+}
+
+.tc-image-effect:after{
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    bottom: 20px;
+    right: 20px;
+}
+
+.tc-image-effect:hover:before,
+.tc-image-effect:hover:after{
+    height: 40px;
+    width: 40px;
+    opacity: 1;
+}
+
+.tc-image-effect .caption h3{
+    color: #fff;
+    margin-bottom: 8px;
+    transform: translateY(20px);
+    transition: all .5s ease-in-out;
+    opacity: 0;
+}
+
+.tc-image-effect .caption p{
+    transform: translateY(50px)
+    color rgba(255,255,255, 0.7);
+    opacity: 0;
+    transition: all .5s ease-in-out;
+}
+
+.tc-image-effect:hover .caption h3,
+.tc-image-effect:hover .caption p{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.tc-image-effect .link-wrap{
+    position: absolute;
+    top: calc(50% -25px);
+    right: 50%;
+    transform: translateX(50%) translateY(-50%);
+    z-index: 10;
+}
+
+.tc-image-effect.link-wrap a{
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    background-color: rgba(0,0,0,0.56);
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    opacity: 0;
+    border-radius: 50%;
+    transition: all .5s ease-in-out;
+}
+
+.tc-image-effect .link-wrap a:nth-child(2){
+    transform: translateY(-30px);
+    margin-right: 5px;
+}
+
+.tc-image-effect .link-wrap a:last-child{
+    transform: translateY(-90px);
+}
+
+.tc-image-effect:hover .link-wrap a{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+.tc-image-effect .link-wrap a:hover{
+    background-color: rgba(0,0,0,0.76);
+}
